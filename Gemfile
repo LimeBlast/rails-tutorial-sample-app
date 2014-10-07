@@ -23,6 +23,7 @@ group :development, :test do
   gem 'spring',      '1.1.3'
   gem 'growl'
   gem 'rubocop', require: false
+  gem 'railroady'
 end
 
 group :test do
