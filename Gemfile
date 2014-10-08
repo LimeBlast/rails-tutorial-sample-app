@@ -24,6 +24,7 @@ group :development, :test do
   gem 'growl'
   gem 'rubocop', require: false
   gem 'railroady'
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :test do
