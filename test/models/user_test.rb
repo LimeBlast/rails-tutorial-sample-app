@@ -16,6 +16,10 @@
 #  reset_digest      :string
 #  reset_sent_at     :datetime
 #
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
 
 require 'test_helper'
 

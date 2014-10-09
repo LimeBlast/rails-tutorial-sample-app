@@ -16,6 +16,10 @@
 #  reset_digest      :string
 #  reset_sent_at     :datetime
 #
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
 
 class User < ActiveRecord::Base
   attr_accessor :remember_token, :activation_token, :reset_token
