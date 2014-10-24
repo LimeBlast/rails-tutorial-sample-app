@@ -20,3 +20,5 @@
 
 # Ignore Rubymine
 .idea
+
+public/uploads/*
