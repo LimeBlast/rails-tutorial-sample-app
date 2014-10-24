@@ -17,7 +17,7 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test 'layout links for member' do
     log_in_as(@user)
-    assert is_logged_in?
+    assert logged_in?
     assert_redirected_to @user
     follow_redirect!
     assert_select 'a[href=?]', users_path

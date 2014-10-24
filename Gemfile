@@ -32,6 +32,7 @@ group :development, :test do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'rails-erd', git: 'https://github.com/ready4god2513/rails-erd.git', branch: 'rails-4.2-support-fix'
+  gem 'guard-rubocop'
 end
 
 group :test do

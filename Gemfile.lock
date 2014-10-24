@@ -136,6 +136,9 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
+    guard-rubocop (1.1.0)
+      guard (~> 2.0)
+      rubocop (~> 0.20)
     hike (1.2.3)
     hitimes (1.2.2)
     http_parser.rb (0.6.0)
@@ -300,6 +303,7 @@ DEPENDENCIES
   growl
   guard-livereload
   guard-minitest (= 2.3.1)
+  guard-rubocop
   jbuilder (= 2.1.3)
   jquery-rails (= 3.1.2)
   mini_backtrace (= 0.1.3)

@@ -26,7 +26,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal @user.name,  name
     assert_equal @user.email, email
     log_out
-    assert_not is_logged_in?
+    assert_not logged_in?
     assert_redirected_to root_url
     log_in_as(@user)
     assert_redirected_to user_path(@user)
