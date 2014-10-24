@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class PasswordResetsTest < ActionDispatch::IntegrationTest
-
   def setup
     ActionMailer::Base.deliveries.clear
     @user = users(:michael)
@@ -10,7 +9,7 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
   test 'password_reset' do
     get new_password_reset_path
     # Invalid submission
-    post password_resets_path, password_reset: { email: "" }
+    post password_resets_path, password_reset: { email: '' }
     assert_template 'password_resets/new'
     # Valid submission
     post password_resets_path, password_reset: { email: @user.email }

@@ -1,12 +1,11 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  
   def setup
     @user       = users(:michael)
     @other_user = users(:archer)
   end
-  
+
   test 'should get new' do
     get :new
     assert_response :success
@@ -26,7 +25,7 @@ class UsersControllerTest < ActionController::TestCase
     patch :update, id: @user, user: { name: @user.name, email: @user.email }
     assert_redirected_to login_url
   end
-  
+
   test 'should redirect edit when logged in as wrong user' do
     log_in_as(@other_user)
     get :edit, id: @user
@@ -44,10 +43,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_not @other_user.admin?
     patch :update, id: @other_user, user: { password:              'password2',
                                             password_confirmation: 'password2',
-                                            admin: 1 }
+                                            admin:                 1 }
     assert_not @other_user.reload.admin?
   end
-  
+
   test 'should redirect destroy when not logged in' do
     assert_no_difference 'User.count' do
       delete :destroy, id: @user

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UserMailerTest < ActionMailer::TestCase
-
   test 'account_activation' do
     user = User.create(name:                  'Test User',
                        email:                 'test@example.com',

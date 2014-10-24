@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
-
   def setup
     @user = users(:michael)
   end
@@ -11,7 +10,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     get root_path
     assert_select 'div.pagination'
     # Invalid submission
-    post microposts_path, micropost: { content: "" }
+    post microposts_path, micropost: { content: '' }
     assert_select 'div#error_explanation'
     # Valid submission
     content = 'This micropost really ties the room together'
@@ -28,6 +27,6 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     end
     # Visit a different user.
     get user_path(users(:archer))
-    assert_select 'a', { text: 'delete', count: 0 }
+    assert_select 'a', text: 'delete', count: 0
   end
 end
