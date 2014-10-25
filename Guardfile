@@ -1,5 +1,9 @@
-# Defines the matching rules for Guard.
-guard :minitest, spring: true, all_on_start: false do
+guard :rubocop, cli: '--rails' do
+  watch(%r{.+\.rb$})
+  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
+end
+
+guard :minitest, spring: true, all_on_start: true do
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
   watch('test/test_helper.rb') { 'test' }
   watch('config/routes.rb')    { integration_tests }
@@ -60,9 +64,4 @@ guard 'livereload' do
   watch(%r{config/locales/.+\.yml})
   # Rails Assets Pipeline
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
-end
-
-guard :rubocop, cli: '--rails' do
-  watch(%r{.+\.rb$})
-  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end
