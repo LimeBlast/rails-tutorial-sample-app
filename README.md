@@ -10,4 +10,4 @@ To generate annotated routes, run `annotate --routes -p after`
 ### Domain Model
 Run `rake generate_erd` to regenerate (must have [graphviz installed](http://voormedia.github.io/rails-erd/install.html#install-graphviz)).
 
-![ERD](docs/erd.png)
+![ERD](docs/erd.svg)
