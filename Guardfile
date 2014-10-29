@@ -1,7 +1,7 @@
-guard :rubocop, cli: '--rails' do
-  watch(%r{.+\.rb$})
-  watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
-end
+# guard :rubocop, cli: '--rails' do
+#   watch(%r{.+\.rb$})
+#   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
+# end
 
 guard :minitest, spring: true, all_on_start: true do
   watch(%r{^test/(.*)/?(.*)_test\.rb$})
