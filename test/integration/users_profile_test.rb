@@ -18,4 +18,11 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
       assert_match micropost.content, response.body
     end
   end
+
+  test 'only activated user profile display' do
+    @user.activated = false
+    @user.save
+    get user_path(@user)
+    assert_redirected_to root_url
+  end
 end
