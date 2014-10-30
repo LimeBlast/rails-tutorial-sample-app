@@ -15,7 +15,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     first_page_of_users.each do |user|
       assert_select 'a', user.name
     end
-    assert_select 'a', text: 'delete'
+    assert_select 'a', title: 'delete'
     user = first_page_of_users.first
     assert_difference 'User.count', -1 do
       delete user_path(user)
