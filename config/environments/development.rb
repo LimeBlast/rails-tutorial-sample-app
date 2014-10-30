@@ -20,7 +20,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+  config.action_mailer.smtp_settings   = {
+      :user_name      => ENV['MAILTRAP_USERNAME'],
+      :password       => ENV['MAILTRAP_PASSWORD'],
+      :address        => 'mailtrap.io',
+      :domain         => 'mailtrap.io',
+      :port           => '2525',
+      :authentication => :cram_md5
+  }
 
   host = 'rails-tutorial-sample-app.dev'
   config.action_mailer.default_url_options = { host: host }
