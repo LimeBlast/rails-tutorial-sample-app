@@ -15,6 +15,7 @@
 #  activated_at      :datetime
 #  reset_digest      :string
 #  reset_sent_at     :datetime
+#  microposts_count  :integer
 #
 # Indexes
 #
