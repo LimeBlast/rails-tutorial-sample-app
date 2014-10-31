@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount API::Root => '/'
+
   root                'static_pages#home'
   get    'help'    => 'static_pages#help'
   get    'about'   => 'static_pages#about'
@@ -21,6 +23,7 @@ end
 # == Route Map
 #
 #                  Prefix Verb   URI Pattern                             Controller#Action
+#                                /                                       API::Root
 #                    root GET    /                                       static_pages#home
 #                    help GET    /help(.:format)                         static_pages#help
 #                   about GET    /about(.:format)                        static_pages#about
@@ -47,4 +50,6 @@ end
 #                         PUT    /password_resets/:id(.:format)          password_resets#update
 #              microposts POST   /microposts(.:format)                   microposts#create
 #               micropost DELETE /microposts/:id(.:format)               microposts#destroy
+#           relationships POST   /relationships(.:format)                relationships#create
+#            relationship DELETE /relationships/:id(.:format)            relationships#destroy
 #
