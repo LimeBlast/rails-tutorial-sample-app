@@ -36,6 +36,7 @@ group :development, :test do
   gem 'rails-erd', git: 'https://github.com/ready4god2513/rails-erd.git', branch: 'rails-4.2-support-fix'
   gem 'guard-rubocop'
   gem 'dotenv-rails', '~> 1.0.2'
+  gem 'thin'
 end
 
 group :test do
