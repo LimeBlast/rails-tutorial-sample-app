@@ -19,9 +19,12 @@
 /spring/*.pid
 
 # Ignore Rubymine
-.idea
+/.idea
 
 # Ignore dotenv
 .env
 
 public/uploads/*
+
+/.vagrant/
+/cookbooks/
